@@ -35,7 +35,7 @@ class OrderController extends Controller
         $total_price = $product->price * $validated['qty'];
 
         // Simpan penjualan (order)
-        $order = Order::create([
+        $order = Sale::create([
             'customer_id' => $validated['customer_id'],
             'product_id' => $validated['product_id'],
             'quantity' => $validated['qty'],
