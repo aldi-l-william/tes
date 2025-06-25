@@ -46,10 +46,12 @@ const ProductPage = () => {
 
  const handleSubmit = async (e: any) => {
   e.preventDefault();
-
+  console.log(product, "product");
+  console.log(form, "form");
   // Temukan produk berdasarkan ID yang dipilih
-  const selectedProduct:any = product.find((p: any) => p.id === form.product_id);
-
+  const selectedProduct:any = product.find((p: any) => p.id == form.product_id);
+   
+  console.log(selectedProduct, "selected product");
   if (!selectedProduct) {
     setMessage("Produk tidak ditemukan.");
     return;
@@ -60,6 +62,8 @@ const ProductPage = () => {
     setMessage(`Stok tidak mencukupi. Stok tersedia: ${selectedProduct.stock}`);
     return;
   }
+
+
 
   try {
     const token = localStorage.getItem('token');
